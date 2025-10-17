@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenFrontier</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/layout.css')}}">
+</head>
+<body>
+    
+    <div class="main-container">
+        
+        <div id="image-container">
+            <img id="pass-image" src="{{ url_for('static', filename='images/default_pass.png') }}" alt="Ubicación del Paso">
+        </div>
+        
+        <div id="pass-status-container">
+            <h2 id="pass-status-text">Cargando Estado...</h2>
+        </div>
+
+        <main>
+            {% block content %}
+            {% endblock %}
+        </main>
+
+        <div class="footer-info">
+            <h3>De Simon Garcia - Ayelen Peña - Lucas Olguin - Valentina Frias</h3>
+            <p><a href="{{ url_for('about.about_page') }}">Sobre este proyecto</a></p>
+        </div>
+
+    </div>
+
+    <nav id="bottom-nav">
+        <div id="unauthenticated-options">
+            <a href="/login" class="nav-button">Iniciar Sesión</a>
+            <a href="/register" class="nav-button">Registrarse</a>
+        </div>
+
+        <div id="authenticated-options" style="display: none;"> 
+            <a href="/map" class="nav-button">Ver Mapa</a>
+            <a href="/notifications" class="nav-button">Notificaciones</a>
+            <a href="/profile" class="nav-button">Perfil</a>
+            
+            <a href="/dashboard" id="admin-dashboard-link" class="nav-button" style="display:none;">Lista de Usuarios</a>
+            
+            <button id="logout-button" class="nav-button">Cerrar Sesión</button>
+        </div>
+    </nav>
+    
+    <script src="{{ url_for('static', filename='js/nav_handler.js') }}"></script>
+</body>
+</html>

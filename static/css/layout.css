@@ -1,0 +1,125 @@
+/* ================================================= */
+/* ESTILOS DE BASE Y CONTENEDORES                    */
+/* ================================================= */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-color: #f4f4f9; 
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    
+    /* 🔑 CLAVE 1: EVITAR EL DESBORDE HORIZONTAL 🔑 */
+    overflow-x: hidden; 
+}
+
+.main-container {
+    flex-grow: 1; 
+    padding-bottom: 60px; 
+    padding-top: 0; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    /* 🔑 CLAVE 2: Permitir que el contenedor ocupe el 100% del ancho visible 🔑 */
+    width: 100%; 
+    max-width: none; /* Elimina el límite de 800px para la imagen */
+    margin: 0 auto;
+}
+
+/* ================================================= */
+/* 1. Imagen (Ancho Completo de la Pantalla)         */
+/* ================================================= */
+#image-container {
+    /* 🔑 CLAVE 3: Usar 100% en lugar de 100vw y eliminar las reglas de centrado complejo 🔑 */
+    width: 100%; 
+    
+    height: 300px; 
+    overflow: hidden;
+    margin-bottom: 20px;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#pass-image {
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    display: block; 
+}
+
+/* ================================================= */
+/* 2. Indicador de Estado (Recortar Lados)           */
+/* ================================================= */
+#pass-status-container {
+    /* Mantenemos el recorte: 90% para móvil, 450px máx para escritorio */
+    width: 90%; 
+    max-width: 450px; 
+    
+    text-align: center;
+    padding: 15px 0;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    background-color: #333; 
+    color: white;
+    transition: background-color 0.5s;
+}
+
+#pass-status-text {
+    margin: 0;
+}
+
+/* ================================================= */
+/* 3. Contenido Central (MAIN) - Ahora sí limitado   */
+/* ================================================= */
+main {
+    /* Usamos 'main' para limitar el ancho del contenido de texto/formularios */
+    width: 90%;
+    max-width: 800px; 
+    margin: 0 auto; 
+    padding-bottom: 20px;
+}
+
+/* ================================================= */
+/* 4. Barra de Navegación y Pie de Página (bottom)   */
+/* (Mantenemos los estilos anteriores) */
+/* ================================================= */
+#bottom-nav {
+    position: fixed; 
+    bottom: 0; 
+    width: 100%;
+    background-color: #333; 
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center; 
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3); 
+}
+
+#unauthenticated-options, #authenticated-options {
+    display: flex;
+    gap: 15px; 
+}
+
+.nav-button {
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    background-color: #555;
+    transition: background-color 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.nav-button:hover {
+    background-color: #777;
+}
+
+.footer-info {
+    text-align: center;
+    padding: 20px 0;
+    color: #666;
+    font-size: 0.9em;
+}

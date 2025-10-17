@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+</head>
+
+<body class="p-4">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Dashboard</a>
+            <a href="/" class="btn btn-outline-success me-2">Ir a Página Principal</a> 
+            <a href="/panel_clima_y_pasos" class="btn btn-outline-info me-2">Ir a Panel de Clima</a>
+            <button class="btn btn-outline-danger" id="logoutBtn">Cerrar Sesión</button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h3>Welcome, <span id="username"></span>!</h3>
+        <p>Your role: <span id="role"></span></p>
+
+        <div id="map"></div>
+
+        <div id="adminSection" style="display:none;">
+            <h5>Admin-only content</h5>
+            <p>This section is visible only to admins.</p>
+
+            <h6>Users List</h6>
+            <table class="table table-bordered mt-2">
+                <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th>Email</th>
+                        <th>Role</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="usersTableBody">
+                                    </tbody>
+            </table>
+        </div>
+    </div> 
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    
+        <script src="/static/js/dashboard.js"></script> 
+
+</body>
+</html>
